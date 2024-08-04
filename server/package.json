@@ -1,0 +1,19 @@
+{
+  "name": "gaari",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon ./index.js"
+  },
+  "keywords": [],
+  "author": "Batch11",
+  "license": "ISC",
+  "description": "Pakistan's most amazing car rental service",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2",
+    "nodemon": "^3.1.4"
+  }
+}
