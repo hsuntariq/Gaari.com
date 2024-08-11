@@ -8,6 +8,9 @@ require("dotenv").config();
 // import colors library to style terminal
 require("colors");
 
+const cors = require("cors");
+app.use(cors());
+
 // connect to the database
 connectDB();
 

@@ -1,13 +1,14 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { IoArrowForwardOutline } from "react-icons/io5";
+import LoginForm from "./LoginForm";
 
 const Front = () => {
   return (
     <>
       <Container className="text-center p-5">
         <Row>
-          <Col lg={6}>
+          <Col xl={6} className="my-3">
             <div className="text-center">
               <h5>Largest Car Source</h5>
               <h2 className="text-uppercase display-4">
@@ -39,7 +40,12 @@ const Front = () => {
               </p>
             </div>
           </Col>
-          <Col lg={6}></Col>
+          <Col
+            xl={6}
+            className="login-section rounded-3 d-flex justify-content-center align-items-center p-5"
+          >
+            <LoginForm />
+          </Col>
         </Row>
       </Container>
     </>

@@ -30,4 +30,19 @@ body {
   background-position: center center;
   background-size: cover;
   color: white;
+  padding: 4rem !important;
+}
+
+.login-section {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url("https://w0.peakpx.com/wallpaper/616/190/HD-wallpaper-eleanor-cars-classic-ford-mustang-mustangs-old.jpg");
+  background-position: center center;
+  background-size: cover;
+  color: white;
+}
+
+.khali {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url("https://w0.peakpx.com/wallpaper/616/190/HD-wallpaper-eleanor-cars-classic-ford-mustang-mustangs-old.jpg");
+  background-position: -100% -43%;
 }
