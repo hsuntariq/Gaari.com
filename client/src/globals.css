@@ -46,3 +46,13 @@ body {
     url("https://w0.peakpx.com/wallpaper/616/190/HD-wallpaper-eleanor-cars-classic-ford-mustang-mustangs-old.jpg");
   background-position: -100% -43%;
 }
+
+.react-tel-input input {
+  box-shadow: none !important;
+  width: 100% !important;
+  height: 50px !important;
+}
+
+.react-tel-input {
+  margin-top: 1rem !important;
+}

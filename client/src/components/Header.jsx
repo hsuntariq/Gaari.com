@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { LuSearch } from "react-icons/lu";
+import SignUpModal from "./authentication/SignUpModal";
 
 function Header() {
   return (
@@ -40,12 +41,8 @@ function Header() {
               />
             </form>
           </Nav>
-          <Button
-            style={{ background: "#d1ff97" }}
-            className="rounded-pill login-btn px-4 border-0 text-dark fw-medium"
-          >
-            Login
-          </Button>
+
+          <SignUpModal />
         </Navbar.Collapse>
       </Container>
     </Navbar>

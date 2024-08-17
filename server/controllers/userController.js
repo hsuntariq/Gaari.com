@@ -50,12 +50,14 @@ const loginUser = expressAsyncHandler(async (req, res) => {
   const findUser = await userModal.findOne({ email: myEmail });
 
   if (!findUser) {
+    res.status(404);
     throw new Error("Invalid Email");
   }
 
   if (findUser && (await encrypt.compare(myPassword, findUser.password))) {
     res.send(findUser);
   } else {
+    res.status(401);
     throw new Error("Invalid password");
   }
 });

@@ -66,6 +66,7 @@ const LoginForm = () => {
           </p>
         </div>
         <button
+          disabled={userLoading}
           onClick={handleLogin}
           className="btn btn-dark rounded-5 w-75 d-block mx-auto my-2"
         >
@@ -75,12 +76,12 @@ const LoginForm = () => {
                 visible={true}
                 height="20"
                 width="20"
-                color="grey"
                 strokeWidth="5"
                 animationDuration="0.75"
                 ariaLabel="rotating-lines-loading"
                 wrapperStyle={{}}
-                wrapperClass=""
+                wrapperClass="text-white bg-white"
+                strokeColor="white"
               />
             </>
           ) : (
