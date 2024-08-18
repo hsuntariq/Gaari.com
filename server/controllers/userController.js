@@ -1,6 +1,9 @@
 const userModal = require("../models/userModal");
 const expressAsyncHandler = require("express-async-handler");
 const encrypt = require("bcrypt");
+
+const jwt = require("jsonwebtoken");
+
 // make a function to register the user
 const registerUser = expressAsyncHandler(async (req, res) => {
   // get the data from the user
@@ -31,7 +34,15 @@ const registerUser = expressAsyncHandler(async (req, res) => {
       image: myImage,
     });
 
-    res.send(createdUser);
+    res.send({
+      _id: createdUser._id,
+      name: createdUser.name,
+      email: createdUser.email,
+      phone: createdUser.phone,
+      password: createdUser.password,
+      gender: createdUser.gender,
+      image: createdUser.image,
+    });
   } catch (error) {
     throw new Error(error);
   }
@@ -55,7 +66,15 @@ const loginUser = expressAsyncHandler(async (req, res) => {
   }
 
   if (findUser && (await encrypt.compare(myPassword, findUser.password))) {
-    res.send(findUser);
+    res.send({
+      _id: findUser._id,
+      name: findUser.name,
+      email: findUser.email,
+      phone: findUser.phone,
+      password: findUser.password,
+      gender: findUser.gender,
+      image: findUser.image,
+    });
   } else {
     res.status(401);
     throw new Error("Invalid password");

@@ -56,3 +56,19 @@ body {
 .react-tel-input {
   margin-top: 1rem !important;
 }
+
+.img-before {
+  position: relative;
+}
+
+.img-before::before {
+  content: "" !important;
+  position: absolute;
+  width: 65%;
+  border-radius: 10px;
+  height: 130%;
+  left: 20%;
+  bottom: -20%;
+  background: linear-gradient(to bottom, #fe5c3c, #fc8023);
+  z-index: -1;
+}

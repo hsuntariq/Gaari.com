@@ -1,14 +1,12 @@
 import React from "react";
 import Header from "../components/Header";
-import TopSection from "../components/home/TopSection";
 
-const Home = () => {
+const Cars = () => {
   return (
     <>
       <Header />
-      <TopSection />
     </>
   );
 };
 
-export default Home;
+export default Cars;

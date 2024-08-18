@@ -5,8 +5,10 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { LuSearch } from "react-icons/lu";
 import SignUpModal from "./authentication/SignUpModal";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const { user } = useSelector((state) => state.auth);
   return (
     <Navbar expand="lg" className="bg-white container rounded-pill p-2 my-3">
       <Container>
@@ -41,8 +43,25 @@ function Header() {
               />
             </form>
           </Nav>
-
-          <SignUpModal />
+          {user ? (
+            <>
+              <Button
+                style={{ background: "#d1ff97" }}
+                className="rounded-pill  login-btn px-4 border-0 text-dark fw-medium"
+              >
+                <img
+                  src={user?.image}
+                  width={20}
+                  height={20}
+                  className="rounded-circle"
+                  alt=""
+                />{" "}
+                {user?.name}
+              </Button>
+            </>
+          ) : (
+            <SignUpModal />
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>

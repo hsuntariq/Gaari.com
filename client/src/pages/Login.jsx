@@ -7,11 +7,18 @@ import { userReset } from "../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { userError, userMessage, userSuccess } = useSelector(
+  const { userError, userMessage, userSuccess, user } = useSelector(
     (state) => state.auth
   );
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/home");
+    }
+  }, []);
+
   useEffect(() => {
     if (userError) {
       toast.error(userMessage);

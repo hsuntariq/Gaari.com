@@ -21,6 +21,10 @@ app.use(express.urlencoded({ extended: false }));
 // api for users
 app.use("/api/users", require("./routes/userRoutes.js"));
 
+// api for cars
+
+app.use("/api/cars", require("./routes/carsRoutes.js"));
+
 // run error handler function/middleware
 app.use(errorHandler);
 
