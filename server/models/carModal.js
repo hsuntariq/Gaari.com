@@ -29,7 +29,7 @@ const carSchema = mongoose.Schema(
       required: true,
     },
     fuel_average: {
-      type: Float32Array,
+      type: Number,
       required: true,
     },
     color: {

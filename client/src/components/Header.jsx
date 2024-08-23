@@ -6,8 +6,11 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { LuSearch } from "react-icons/lu";
 import SignUpModal from "./authentication/SignUpModal";
 import { useSelector } from "react-redux";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 function Header() {
+  const params = useLocation();
+  const path = params.pathname;
   const { user } = useSelector((state) => state.auth);
   return (
     <Navbar expand="lg" className="bg-white container rounded-pill p-2 my-3">
@@ -16,14 +19,33 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className="fw-medium" href="#home">
-              Home
+            <Nav.Link
+              className={`fw-medium ${path == "/home" && "text-warning"} `}
+              href="#home"
+            >
+              <Link
+                to="/home"
+                className={` text-decoration-none fw-medium ${
+                  path == "/home" ? "text-warning" : "text-dark"
+                } `}
+              >
+                Home
+              </Link>
             </Nav.Link>
             <Nav.Link className="fw-medium" href="#link">
               About
             </Nav.Link>
-            <Nav.Link className="fw-medium" href="#link">
-              Cars
+            <Nav.Link
+              className={`fw-medium ${path == "cars" && "text-warning"} `}
+            >
+              <Link
+                to="/cars"
+                className={` text-decoration-none fw-medium ${
+                  path == "/cars" ? "text-warning" : "text-dark"
+                } `}
+              >
+                Cars
+              </Link>
             </Nav.Link>
             <Nav.Link className="fw-medium" href="#link">
               Bikes
