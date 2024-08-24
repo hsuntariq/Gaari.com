@@ -51,6 +51,12 @@ const addCars = AsyncHander(async (req, res) => {
   //   res.send("hello");
 });
 
+const getCars = AsyncHander(async (req, res) => {
+  const cars = await carModal.find();
+  res.send(cars);
+});
+
 module.exports = {
   addCars,
+  getCars,
 };

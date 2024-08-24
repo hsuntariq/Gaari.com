@@ -48,7 +48,14 @@ function Header() {
               </Link>
             </Nav.Link>
             <Nav.Link className="fw-medium" href="#link">
-              Bikes
+              <Link
+                to="/collections"
+                className={` text-decoration-none fw-medium ${
+                  path == "/collections" ? "text-warning" : "text-dark"
+                } `}
+              >
+                Collections
+              </Link>
             </Nav.Link>
             <form
               style={{ background: "#E6E6E6" }}

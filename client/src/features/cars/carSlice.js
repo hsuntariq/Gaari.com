@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { addCars } from "./carService";
+import { addCars, getCars } from "./carService";
 
 // define your initial State
 
@@ -23,6 +23,14 @@ export const addCarData = createAsyncThunk(
     }
   }
 );
+
+export const getCarData = createAsyncThunk("get-cars", async (_, thunkAPI) => {
+  try {
+    return await getCars();
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data.error);
+  }
+});
 
 // make your state global
 
@@ -51,6 +59,19 @@ export const carSlice = createSlice({
         state.carLoading = false;
         state.carSuccess = true;
         state.cars.push(action.payload);
+      })
+      .addCase(getCarData.pending, (state, action) => {
+        state.carLoading = true;
+      })
+      .addCase(getCarData.rejected, (state, action) => {
+        state.carLoading = false;
+        state.carError = true;
+        state.carMessage = action.payload;
+      })
+      .addCase(getCarData.fulfilled, (state, action) => {
+        state.carLoading = false;
+        state.carSuccess = true;
+        state.cars = action.payload;
       });
   },
 });

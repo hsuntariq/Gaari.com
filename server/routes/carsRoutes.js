@@ -1,7 +1,8 @@
 const express = require("express");
-const { addCars } = require("../controllers/carsController");
+const { addCars, getCars } = require("../controllers/carsController");
 const router = express.Router();
 
 router.post("/add-car/:user_id", addCars);
+router.get("/get-cars", getCars);
 
 module.exports = router;

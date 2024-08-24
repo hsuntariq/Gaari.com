@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import "react-phone-input-2/lib/style.css";
 import Home from "./pages/Home";
 import Cars from "./pages/Cars";
+import Collections from "./pages/Collections";
 const App = () => {
   return (
     <>
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/cars" element={<Cars />} />
+          <Route path="/collections" element={<Collections />} />
         </Routes>
       </Router>
     </>
